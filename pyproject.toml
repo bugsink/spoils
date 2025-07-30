@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=64", "setuptools_scm>=8"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools_scm]
+version_file = "spoils/_version.py"
+
+[project]
+name = "spoils"
+authors = [
+    {name = "Bugsink B.V.", email = "info@bugsink.com"},
+]
+description = "Multiple Processes in a Single Container" 
+readme = "README.md"
+requires-python = ">=3.8"
+license = "BSD-3-Clause"
+classifiers = [
+    "Programming Language :: Python :: 3",
+]
+dynamic = ["version"]
+dependencies = [
+  "bandit",
+]
+
+[project.urls]
+homepage = "https://github.com/bugsink/spoils"
+repository = "https://github.com/bugsink/spoils"
+issues = "https://github.com/bugsink/spoils/issues"
+
+[tool.setuptools]
+include-package-data = true  # this is the default, but explicit is better than implicit
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = [
+    "spoils*",
+]
+
+exclude = []  # exclude packages matching these glob patterns (empty by default)
+
+[project.entry-points."bandit.plugins"]
+no-os-path-join = "spoils.plugins.os_path_join:no_os_path_join"
