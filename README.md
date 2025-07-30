@@ -4,7 +4,7 @@ A lightweight collection of additional security checks for [Bandit](https://gith
 
 ## Add-ons
 
-* **B...: No `os.path.join` misuse**
+* **B380: No `os.path.join` misuse**
   Detects unvalidated or unsafe usage of `os.path.join` calls in your codebase.
 
 ## Installation
